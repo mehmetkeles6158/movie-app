@@ -1,1 +1,5 @@
-GET http://localhost:3000/actor
+GET http://localhost:3000/actor.json
+
+###
+
+GET http://localhost:3000/allactors.json
