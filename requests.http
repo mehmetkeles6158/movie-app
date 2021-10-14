@@ -3,3 +3,19 @@ GET http://localhost:3000/actor.json
 ###
 
 GET http://localhost:3000/allactors.json
+
+###
+
+GET http://localhost:3000/query_single_actor?actor=Matt Demon
+
+###
+
+GET http://localhost:3000/url_single_actor/Matt Demon
+
+###
+POST http://localhost:3000/body_single_actor
+content-type: application/json
+
+{
+  "actor" : "Matt Demon"
+}

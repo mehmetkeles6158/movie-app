@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   get "/actor", controller: "actors", action:"firstactor"
 
   get "/allactors", controller: "actors", action:"all_actors"
+
+  get "/query_single_actor" =>"actors#actor_method"
+
+  get "/url_single_actor/:actor" =>"actors#actor_method"
+
+  post "/body_single_actor" => "actors#actor_method"
 end

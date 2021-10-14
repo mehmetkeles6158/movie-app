@@ -24,5 +24,13 @@ class ActorsController < ApplicationController
     render json:actors.as_json
   end
 
+  def actor_method
+
+    actor1 = params["actor"]
+
+    render json:{message:"My second favorite actor is #{actor1}!"}
+    
+  end
+
 
 end
