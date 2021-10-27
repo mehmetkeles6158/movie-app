@@ -19,3 +19,14 @@ content-type: application/json
 {
   "actor" : "Matt Demon"
 }
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Kevin Duncan",
+  "email": "kevin@info.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
