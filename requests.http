@@ -1,23 +1,19 @@
-GET http://localhost:3000/actor.json
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU0NDk5MjN9.AkQgYYj9J2JrCTbwHXMtxtS4imA6lgyiv0Sxh8A0JvI
+
+GET http://localhost:3000/actors
 
 ###
-
-GET http://localhost:3000/allactors.json
-
+GET http://localhost:3000/actors/5
 ###
 
-GET http://localhost:3000/query_single_actor?actor=Matt Demon
-
-###
-
-GET http://localhost:3000/url_single_actor/Matt Demon
-
-###
-POST http://localhost:3000/body_single_actor
+POST http://localhost:3000/actors
 content-type: application/json
 
 {
-  "actor" : "Matt Demon"
+  "first_name": "Colin",
+  "last_name": "Farrell",
+  "known_for": "Phone Both"
 }
 
 ### Users create (signup)
