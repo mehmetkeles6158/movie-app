@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/body_single_actor" => "actors#actor_method"
 
   post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
+
 
 
 
