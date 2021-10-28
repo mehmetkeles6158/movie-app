@@ -1,20 +1,21 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU0NDk5MjN9.AkQgYYj9J2JrCTbwHXMtxtS4imA6lgyiv0Sxh8A0JvI
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU1MjI0ODJ9.3Y7StLPUFL9vuxJ14xfsn5BUooy9lLVOim0vM9K6-oI
 
 GET http://localhost:3000/actors
 
 ###
 GET http://localhost:3000/actors/5
-###
 
+###
 POST http://localhost:3000/actors
 content-type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-  "first_name": "Colin",
-  "last_name": "Farrell",
-  "known_for": "Phone Both",
-  "movie_id" : 2
+  "first_name": "Ben ",
+  "last_name": "Affleck",
+  "known_for": "Batman",
+  "movie_id" : 1
 }
 
 ### Users create (signup)
