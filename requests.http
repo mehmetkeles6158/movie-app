@@ -13,7 +13,8 @@ content-type: application/json
 {
   "first_name": "Colin",
   "last_name": "Farrell",
-  "known_for": "Phone Both"
+  "known_for": "Phone Both",
+  "movie_id" : 2
 }
 
 ### Users create (signup)
