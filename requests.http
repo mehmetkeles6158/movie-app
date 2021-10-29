@@ -1,11 +1,14 @@
 
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU1MjI0ODJ9.3Y7StLPUFL9vuxJ14xfsn5BUooy9lLVOim0vM9K6-oI
 
+# Movie-Index
 GET http://localhost:3000/actors
 
+# Movie-Show
 ###
 GET http://localhost:3000/actors/5
 
+# Movie-Create
 ###
 POST http://localhost:3000/actors
 content-type: application/json
@@ -17,6 +20,22 @@ Authorization: Bearer {{jwt}}
   "known_for": "Batman",
   "movie_id" : 1
 }
+
+# Movie-Update
+###
+PATCH http://localhost:3000/actors/7
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "first_name" : "Kevin"
+}
+
+# Movie-Destroy
+###
+DELETE http://localhost:3000/actors/3
+
+
 
 ### Users create (signup)
 POST http://localhost:3000/users
