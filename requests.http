@@ -1,14 +1,14 @@
 
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU1MjI0ODJ9.3Y7StLPUFL9vuxJ14xfsn5BUooy9lLVOim0vM9K6-oI
 
-# Movie-Index
+# Actor-Index
 GET http://localhost:3000/actors
 
-# Movie-Show
+# Actor-Show
 ###
 GET http://localhost:3000/actors/5
 
-# Movie-Create
+# Actor-Create
 ###
 POST http://localhost:3000/actors
 content-type: application/json
@@ -21,7 +21,7 @@ Authorization: Bearer {{jwt}}
   "movie_id" : 1
 }
 
-# Movie-Update
+# Actor-Update
 ###
 PATCH http://localhost:3000/actors/7
 Content-Type: application/json
@@ -31,7 +31,7 @@ Authorization: Bearer {{jwt}}
   "first_name" : "Kevin"
 }
 
-# Movie-Destroy
+# Actor-Destroy
 ###
 DELETE http://localhost:3000/actors/3
 
