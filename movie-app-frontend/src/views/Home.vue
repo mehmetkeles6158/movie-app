@@ -1,18 +1,60 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ message }}</h1>
+    <div v-for="actor in actors">
+      <p>
+        {{ actor.first_name }}
+      </p>
+      <p><button v-on:click="showActor(actor)">More Info</button></p>
+    </div>
+    <dialog id="show-actor">
+      <form method="dialog">
+        <p>
+          <b>First Name:</b>
+          <input type="text" v-model="currentActor.first_name" />
+        </p>
+        <p>
+          <b>Last Name:</b>
+          <input type="text" v-model="currentActor.last_name" />
+        </p>
+        <p>
+          <b>Know For:</b>
+          <input type="text" v-model="currentActor.known_for" />
+        </p>
+      </form>
+    </dialog>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<style></style>
 
+<script>
+import axios from "axios";
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  data: function () {
+    return {
+      message: "Welcome to Movie-app!",
+      actors: [],
+      currenActor: {},
+    };
+  },
+  created: function () {
+    this.indexActors();
+  },
+  methods: {
+    indexActors: function () {
+      console.log("loading actors");
+      axios.get("/actors").then((response) => {
+        console.log(response.data);
+        this.actors = response.data;
+      });
+    },
+    showActor: function (theActor) {
+      console.log(theActor);
+      this.currentActor = theActor;
+      console.log("opening modal...");
+      document.querySelector("#show-actor").showModal();
+    },
+  },
+};
 </script>
