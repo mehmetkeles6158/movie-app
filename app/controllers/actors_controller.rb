@@ -1,5 +1,5 @@
 class ActorsController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  # before_action :authenticate_admin, except: [:index, :show]
   def index
     actors = Actor.all
     render json:actors
@@ -24,7 +24,7 @@ class ActorsController < ApplicationController
     if actor.save
       render json:actor
     else
-      render json: {errors: actor.errors.full_messages}
+      render json: {errors: actor.errors.full_messages}, status: 422
     end
 
   end
